@@ -1,25 +1,57 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-	</head>
-	<style>
-		body {
-			margin: 5% 10%;
-		}
-		.form-group {
-			max-width: 550px;
-		}
-		.custom-controls-stacked {
-			max-width: 300px;
-		}
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
+  </head>
+  <style>
+    body {
+      margin: 5% 30%;
+      font-family: Rubik, sans-serif;
+    }
+    .form-group {
+      max-width: 550px;
+    }
+    .custom-controls-stacked {
+      max-width: 300px;
+    }
+
+    .btn
+    {
+    color:#FFFFFF;
+    background:#000000;
+    padding:10px 20px;
+    font-size:12px;
+    font-weight: 600;
+    text-decoration:none;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    }
+    .btn:hover{
+    border:none;
+    background:rgba(0, 0, 0, 0.4);
+    background:#fff;
+    padding:20px 20px; #000;
+    color:#1b1b1b;
+
+  }
+
+  h1 {
+  font-weight: 700;
+  color: #000000;
+  margin-bottom: 3%;
+  font-size: 43px;
+}
+
 </style>
 
-	<body>
-		<h1> Add an Event </h1>
-		<form action="#" method="post">
+  <body>
+    <h1> Add an Event </h1>
 
- 	 <div class="form-group">
+    <div id="form">
+    <form action="#" method="post">
+
+   <div class="form-group">
     <label for="eventname">Name of Event</label>
     <input type="text" class="form-control" id="eventname" required>
   </div>
@@ -44,7 +76,7 @@
     <input type="time" class="form-control" id="startTime">
   </div>
 
-  </div>
+
     <div class="form-group">
     <label for="endTime">Ending Time</label>
     <input type="time" class="form-control" id="endTime">
@@ -99,5 +131,6 @@
 
  <button type="submit" class="btn btn-primary" onclick="window.location.href='/add-event'">Submit</button>
 </form>
-	</body>
+</div>
+  </body>
 </html>

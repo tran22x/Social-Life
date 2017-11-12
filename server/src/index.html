@@ -14,30 +14,34 @@
   <link rel='stylesheet prefetch' href='css/__codepen_io_andytran_pen.css'>
   <link rel="stylesheet" href="css/style.css">
   <link href='http://fonts.googleapis.com/css?family=Oswald:300' rel='stylesheet' type='text/css'>
+  <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
 
 </head>
 
 <body>
 
+    <h1 id="Title"> #Social Life at MHC</h1>
     <button type="button" class="btn btn-primary" id="addBtn" onclick="window.location.href='/create'">Add Event</button>
     <!-- Navbar -->
 
     <div id="Navbar">
-    <a href="#" class="btn">Sports</a>
-    <a href="#" class="btn">Parties</a>
-    <a href="#" class="btn">Cultural</a>
-    <a href="#" class="btn">Local</a>
-    <a href="#" class="btn">Speaker</a>
+    <a href="#" class="btn" id="sportsBtn">Sports</a>
+    <a href="#" class="btn" id="partyBtn">Parties</a>
+    <a href="#" class="btn" id="c">Cultural</a>
+    <a href="#" class="btn" id="localBtn">Local</a>
+    <a href="#" class="btn" id="speakerBtn">Speaker</a>
   </div>
 
 <div class="container">
   <!-- Sort by latest date -->
   <h1 id="latest">Happening Now</h1>
-<div class="row">
+<div class="row" id="latest">
 
+ <a href="https://www.facebook.com/events/514041098956667/">
   <div class="col-lg-4 col-sm-6">
     <!-- Post-->
     <div class="post-module">
+
       <!-- Thumbnail-->
       <div class="thumbnail">
         <div class="date">
@@ -47,15 +51,17 @@
       </div>
       <!-- Post Content-->
       <div class="post-content">
-        <div class="category">Photos</div>
+        <div class="category">Cultural</div>
         <h1 class="title">VariAsians 2017</h1>
         <h2 class="sub_title">#VeriAsian</h2>
-        <p class="description">Featuring our cool students on campus yo!</p>
+        <p class="description">Join MHC Asian Students Association for one of fall semester’s biggest cultural showcases, VariAsians. On November 10, 2017, enjoy a variety of Asian cuisine, performances, and a fashion show!</p>
       </div>
     </div>
   </div>
+  </a>
 
   <!-- Second tab-->
+  <a href="http://hackholyoke.com/">
   <div class="col-lg-4 col-sm-6">
     <!-- Post-->
     <div class="post-module">
@@ -68,14 +74,16 @@
       </div>
       <!-- Post Content-->
       <div class="post-content">
-        <div class="category">Photos</div>
+        <div class="category">Parties</div>
         <h1 class="title">Hack Holyoke 2017</h1>
         <h2 class="sub_title">#Getpumped</h2>
-        <p class="description">Like our school's founder, we reckon ourselves pioneers: change-makers unafraid to be the first to do great work. Mount Holyoke is the oldest women's college in the United States, and, true to this spirit, we were the first women's college to host a hackathon. HackHolyoke is a 24-hour hackathon that welcomes 200 hackers from around the country to be fearless, to truly be innovative, and to develop brilliantly new and disruptive technologies.</p>
+        <p class="description">The first women's college hackathon, HackHolyoke is a 24-hour hackathon that welcomes 200 hackers from around the country to be fearless, to truly be innovative, and to develop brilliantly new and disruptive technologies.</p>
       </div>
     </div>
   </div>
+</a>
 
+<a href="https://www.facebook.com/events/132083817503639/">
   <div class="col-lg-4 col-sm-6">
     <!-- Post-->
     <div class="post-module">
@@ -88,14 +96,15 @@
       </div>
       <!-- Post Content-->
       <div class="post-content">
-        <div class="category">Photos</div>
+        <div class="category">Cultural</div>
         <h1 class="title">Vietnamese Coffee Workshop</h1>
-        <h2 class="sub_title">#Getcaffinated</h2>
-        <p class="description">Mi sleepi mi get coffi</p>
+        <h2 class="sub_title">#Getca-phe-inated</h2>
+        <p class="description">Get ca-phe-inated Vietnamese style! Delicious coffee and snacks included!</p>
       </div>
     </div>
   </div>
 </div>
+</a>
 
 <!-- Sorting by sports -->
 <h1 id="sports"> Sports Events </h1>
@@ -112,7 +121,7 @@
       </div>
       <!-- Post Content-->
       <div class="post-content">
-        <div class="category">Photos</div>
+        <div class="category">Sports</div>
         <h1 class="title">Riding</h1>
         <h2 class="sub_title">#GoLyons!</h2>
         <p class="description">Riding Wins Third Straight Show at Biscuit Hill</p>
@@ -133,7 +142,7 @@
       </div>
       <!-- Post Content-->
       <div class="post-content">
-        <div class="category">Photos</div>
+        <div class="category">Sports</div>
         <h1 class="title">Squash</h1>
         <h2 class="sub_title">#GoLyons!</h2>
         <p class="description">Squash Starts Strong With Wins Over BU (9-0) and Vassar (8-1)</p>
@@ -153,7 +162,7 @@
       </div>
       <!-- Post Content-->
       <div class="post-content">
-        <div class="category">Photos</div>
+        <div class="category">Sports</div>
         <h1 class="title">Basketball</h1>
         <h2 class="sub_title">#GoLyons!</h2>
         <p class="description">Mount Holyoke College vs Worcester State University</p>
@@ -161,7 +170,7 @@
     </div>
   </div>
 </div>
-</div>
+
 
 <!-- Sorting by party -->
 <h1 id="party"> Party Events </h1>
@@ -178,7 +187,7 @@
       </div>
       <!-- Post Content-->
       <div class="post-content">
-        <div class="category">Photos</div>
+        <div class="category">Parties</div>
         <h1 class="title">Wheelhouse Karaoke</h1>
         <h2 class="sub_title">#SingYourHeartOut</h2>
         <p class="description">Wheelhouse Karaoke at Hawks & Reed</p>
@@ -199,7 +208,7 @@
       </div>
       <!-- Post Content-->
       <div class="post-content">
-        <div class="category">Photos</div>
+        <div class="category">Parties</div>
         <h1 class="title">Young & Relentless: 2 Year Anniversary Show</h1>
         <h2 class="sub_title">#MustSee</h2>
         <p class="description">Back at it again! Come out and celebrate with Connecticut People Records and local CT talent for our 2 Year Anniversary of the Young & Relentless music showcase. </p>
@@ -219,7 +228,7 @@
       </div>
       <!-- Post Content-->
       <div class="post-content">
-        <div class="category">Photos</div>
+        <div class="category">Parties</div>
         <h1 class="title">CT. Verses - Sing - Off</h1>
         <h2 class="sub_title">#SingOff</h2>
         <p class="description">WHO WILL MAKE THE FIRST CUT?.
@@ -236,12 +245,12 @@ INFO. AT (860) 983-4462</p>
     </div>
   </div>
 </div>
-</div>
+
 
 
 <!-- Sorting by Cultural -->
-<h1 id="cultural"> Cultural Events </h1>
-<div class="row">
+<h1 id="culturalEvents"> Cultural Events </h1>
+<div class="row" >
   <div class="col-lg-4 col-sm-6">
     <!-- Post-->
     <div class="post-module">
@@ -275,7 +284,7 @@ INFO. AT (860) 983-4462</p>
       </div>
       <!-- Post Content-->
       <div class="post-content">
-        <div class="category">Photos</div>
+        <div class="category">Cutural</div>
         <h1 class="title">Mooncake Showcase</h1>
         <h2 class="sub_title">#VSA</h2>
         <p class="description">Come try chef Thuan Nguyen's homemade mooncakes!</p>
@@ -295,15 +304,15 @@ INFO. AT (860) 983-4462</p>
       </div>
       <!-- Post Content-->
       <div class="post-content">
-        <div class="category">Photos</div>
+        <div class="category">Cultural</div>
         <h1 class="title">Vietnamese Coffee Workshop</h1>
-        <h2 class="sub_title">#Getcaffinatedbeforeyourmidterms</h2>
-        <p class="description">Mi sleepi mi get coffi</p>
+        <h2 class="sub_title">#Getcaffinatedformidterms</h2>
+        <p class="description">Get ca-phe-inated Vietnamese style! Delicious coffee and snacks included!</p>
       </div>
     </div>
   </div>
 </div>
-</div>
+
 
 <!-- Sorting by local -->
 <h1 id="local"> Local Events </h1>
@@ -320,7 +329,7 @@ INFO. AT (860) 983-4462</p>
       </div>
       <!-- Post Content-->
       <div class="post-content">
-        <div class="category">Photos</div>
+        <div class="category">Local</div>
         <h1 class="title">Equine Affaire</h1>
         <h2 class="sub_title">#WestSpringfield</h2>
         <p class="description">The Equine Affaire, Inc. (Official) is truly national and international in scope as evidenced by the fact that attendees and event participants have traveled to the events from all 50 states, from throughout Canada, and from South America, Europe, and Asia. Stop by the Tourbillon Trailers/4-Star booth and check our trailers on display!</p>
@@ -341,7 +350,7 @@ INFO. AT (860) 983-4462</p>
       </div>
       <!-- Post Content-->
       <div class="post-content">
-        <div class="category">Photos</div>
+        <div class="category">Local</div>
         <h1 class="title">Free Taste of Thanksgiving!</h1>
         <h2 class="sub_title">#Newington</h2>
         <p class="description">Squash Starts Strong With Wins Over BU (9-0) and Vassar (8-1)</p>
@@ -361,7 +370,7 @@ INFO. AT (860) 983-4462</p>
       </div>
       <!-- Post Content-->
       <div class="post-content">
-        <div class="category">Photos</div>
+        <div class="category">Local</div>
         <h1 class="title">Last Tuesday Market of the Year- Bonus Market! Stock up!</h1>
         <h2 class="sub_title">#Northampton</h2>
         <p class="description">Tuesday Market was scheduled to end on November 7th but with our friends at the Northampton Winter Farmers Market not starting up until November 25, we decided to extend our season by one week! If you can't get enough Tuesday Market, you're in luck!
@@ -371,7 +380,7 @@ We will be there for your Thanksgiving needs! You can also plan to stock up on r
     </div>
   </div>
 </div>
-</div>
+
 
 <!-- Sorting by speaker -->
 <h1 id="speaker"> Speaker Events </h1>
@@ -388,7 +397,7 @@ We will be there for your Thanksgiving needs! You can also plan to stock up on r
       </div>
       <!-- Post Content-->
       <div class="post-content">
-        <div class="category">Photos</div>
+        <div class="category">Speaker</div>
         <h1 class="title">Facebook</h1>
         <h2 class="sub_title">#MHC</h2>
         <p class="description">Facebook is on campus tonight to host an info session for internships and full time positions! There will be food and swag!
@@ -410,7 +419,7 @@ This isn't just for CS majors, there are so many other things to do at Facebook 
       </div>
       <!-- Post Content-->
       <div class="post-content">
-        <div class="category">Photos</div>
+        <div class="category">Speaker</div>
         <h1 class="title">Shaun King</h1>
         <h2 class="sub_title">#Amherst</h2>
         <p class="description">Shaun King Speaking at Amherst College</p>
@@ -430,20 +439,28 @@ This isn't just for CS majors, there are so many other things to do at Facebook 
       </div>
       <!-- Post Content-->
       <div class="post-content">
-        <div class="category">Photos</div>
+        <div class="category">Speaker</div>
         <h1 class="title">Goldman Sachs</h1>
         <h2 class="sub_title">#MHC</h2>
         <p class="description">Goldman Sachs at Mount Holyoke College!</p>
       </div>
     </div>
   </div>
+  </div>
+
+  <button type="button" class="btn btn-primary" id="toTopBtn"> Back to Top </button>
 </div>
 </div>
+</div>
+</div>
+</div>
+
 
 
   <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 
   <script>
+
     // styling
     $(window).load(function() {
       $('.post-module').hover(function() {
@@ -454,6 +471,41 @@ This isn't just for CS majors, there are so many other things to do at Facebook 
       });
     });
 
+    $("#c").click(function() {
+          $('html,body').animate({
+        scrollTop: $("#culturalEvents").offset().top},
+        'slow');
+    })
+
+    $("#partyBtn").click(function() {
+          $('html,body').animate({
+        scrollTop: $("#party").offset().top},
+        'slow');
+    })
+
+    $("#localBtn").click(function() {
+          $('html,body').animate({
+        scrollTop: $("#local").offset().top},
+        'slow');
+    })
+
+     $("#sportsBtn").click(function() {
+          $('html,body').animate({
+        scrollTop: $("#sports").offset().top},
+        'slow');
+    })
+
+    $("#speakerBtn").click(function() {
+          $('html,body').animate({
+        scrollTop: $("#speaker").offset().top},
+        'slow');
+    })
+
+    $("#toTopBtn").click(function() {
+          $('html,body').animate({
+        scrollTop: $("#Title").offset().top},
+        'slow');
+    })
   </script>
 
 </body>
