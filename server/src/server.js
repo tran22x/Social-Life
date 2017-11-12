@@ -6,7 +6,7 @@ var fs = require('fs');
 var path = require("path");
 var app = express();
 // var mongoUri = process.env.MONGODB_URI || process.env.MONGOLAB_IVORY_URI || process.env.MONGOHQ_URL || 'mongodb://trailer-nailer.herokuapp.com/movies';
-var mongoUri = process.env.MONGODB_URI || process.env.MONGOLAB_IVORY_URI || process.env.MONGOHQ_URL || 'mongodb://localhost';
+var mongoUri = process.env.MONGODB_URI || process.env.MONGOLAB_IVORY_URI || process.env.MONGOHQ_URL || 'mongodb://localhost/test';
 var MongoClient = require('mongodb').MongoClient, format = require('util').format;
 var db = MongoClient.connect(mongoUri, function(error, databaseConnection) {
   db = databaseConnection;
@@ -97,6 +97,12 @@ app.post('/testdb', function(request, response) {
       });
     }
   });
+});
+
+app.get('/add-event', function(request, response) {
+  response.set('Content-Type', 'text/html');
+  //TODO: ask Olive for shit
+  response.sendFile(__dirname + '/EventForm.html');
 });
 
 app.post('/add-event', function(request, response) {
