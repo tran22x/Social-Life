@@ -5,8 +5,8 @@ var url = require("url");
 var fs = require('fs');
 var path = require("path");
 var app = express();
-var mongoUri = process.env.MONGODB_URI || process.env.MONGOLAB_IVORY_URI || process.env.MONGOHQ_URL || 'mongodb://trailer-nailer.herokuapp.com/movies';
-// var mongoUri = process.env.MONGODB_URI || process.env.MONGOLAB_IVORY_URI || process.env.MONGOHQ_URL || 'mongodb://localhost/trailer-nailer';
+// var mongoUri = process.env.MONGODB_URI || process.env.MONGOLAB_IVORY_URI || process.env.MONGOHQ_URL || 'mongodb://trailer-nailer.herokuapp.com/movies';
+var mongoUri = process.env.MONGODB_URI || process.env.MONGOLAB_IVORY_URI || process.env.MONGOHQ_URL || 'mongodb://localhost';
 var MongoClient = require('mongodb').MongoClient, format = require('util').format;
 var db = MongoClient.connect(mongoUri, function(error, databaseConnection) {
   db = databaseConnection;
@@ -80,6 +80,25 @@ app.get('/event-page', function(request, response) {
   }
 });
 
+app.post('/testdb', function(request, response) {
+  var name = request.body.name;
+  console.log(name);
+  toInsert = {"name":name};
+  db.collection('test', function(err, col) {
+    if (err) {
+      response.send(500);
+    } else {
+      col.insert(toInsert, function(error, saved) {
+        if (error) {
+          response.send(500);
+        } else {
+          response.send(200);
+        }
+      });
+    }
+  });
+});
+
 app.post('/add-event', function(request, response) {
   var query = request.body;
   if (typeof query['name'] == undefined || typeof query['organizer'] == undefined || typeof query['contact'] == undefined
@@ -92,8 +111,8 @@ app.post('/add-event', function(request, response) {
     var organizer = query['organizer'];
     var contact = query['contact'];
     var date = query['date'];
-    var start-time = query['start-time'];
-    var end-time = query['end-time'];
+    var starttime = query['start-time'];
+    var endtime = query['end-time'];
     var fee = query['fee'];
     var tag = query['tag'];
     var description = query['description'];
@@ -104,8 +123,8 @@ app.post('/add-event', function(request, response) {
       "organizer" : organizer,
       "contact" : contact,
       "date" : date,
-      "start-time" : start-time,
-      "end-time" : end-time,
+      "start-time" : starttime,
+      "end-time" : endtime,
       "fee" : fee,
       "tag" : tag,
       "description" : description,
@@ -125,8 +144,4 @@ app.post('/add-event', function(request, response) {
       }
     });
   }
-});
-
-app.listen(app.get('port'), function() {
-  console.log('Node app is running on port', app.get('port'));
 });
