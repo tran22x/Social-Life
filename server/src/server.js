@@ -6,7 +6,7 @@ var fs = require('fs');
 var path = require("path");
 var app = express();
 // var mongoUri = process.env.MONGODB_URI || process.env.MONGOLAB_IVORY_URI || process.env.MONGOHQ_URL || 'mongodb://trailer-nailer.herokuapp.com/movies';
-var mongoUri = process.env.MONGODB_URI || process.env.MONGOLAB_IVORY_URI || process.env.MONGOHQ_URL || 'mongodb://localhost/test';
+var mongoUri = process.env.MONGODB_URI || process.env.MONGOLAB_IVORY_URI || process.env.MONGOHQ_URL || 'mongodb://localhost';
 var MongoClient = require('mongodb').MongoClient, format = require('util').format;
 var db = MongoClient.connect(mongoUri, function(error, databaseConnection) {
   db = databaseConnection;
@@ -25,14 +25,25 @@ var urlencodedParser = bodyParser.urlencoded({ extended: true })
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
-app.listen(app.get('port'), function() {
-  	console.log('Node app is running on port', app.get('port'));
-});
-
 app.get('/', function(request, response) {
   response.set('Content-Type', 'text/html');
   //TODO: ask Olive for shit
   response.sendFile(__dirname + '/index.html');
+});
+
+app.get('/create', function(request, response) {
+  response.set('Content-Type', 'text/html');
+  response.sendFile(__dirname + '/EventForm.html');
+});
+
+app.get('/css/style.css', function(request, response) {
+  response.set('Content-Type', 'text/css');
+  response.sendFile(__dirname + '/css/style.css');
+});
+
+app.get('/css/__codepen_io_andytran_pen.css', function(request, response) {
+  response.set('Content-Type', 'text/css');
+  response.sendFile(__dirname + '/css/__codepen_io_andytran_pen.css');
 });
 
 //TODO: event-page/????
@@ -99,13 +110,8 @@ app.post('/testdb', function(request, response) {
   });
 });
 
-app.get('/add-event', function(request, response) {
-  response.set('Content-Type', 'text/html');
-  //TODO: ask Olive for shit
-  response.sendFile(__dirname + '/EventForm.html');
-});
-
 app.post('/add-event', function(request, response) {
+  console.log("POST /add-event");
   var query = request.body;
   if (typeof query['name'] == undefined || typeof query['organizer'] == undefined || typeof query['contact'] == undefined
   || typeof query['date'] == undefined || typeof query['start-time'] == undefined || typeof query['end-time'] == undefined
@@ -150,4 +156,8 @@ app.post('/add-event', function(request, response) {
       }
     });
   }
+});
+
+app.listen(app.get('port'), function() {
+  	console.log('Node app is running on port', app.get('port'));
 });
